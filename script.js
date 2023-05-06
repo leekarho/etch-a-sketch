@@ -10,8 +10,8 @@ let row = document.querySelectorAll('.row')
 
 for (let i=0; i<row.length; i++) {
     for (let j=0; j<16; j++) {
-        let column = document.createElement('div')
-        column.textContent = "1"
-        row[i].appendChild(column)
+        let square = document.createElement('div')
+        square.classList.add('square')
+        row[i].appendChild(square)
     }
 }

@@ -1,3 +1,10 @@
 .row {
     display: flex;
+
+}
+
+.square {
+    border-style: solid;
+    border-color: gray;
+    padding: 7px;
 }
