@@ -15,3 +15,8 @@ for (let i=0; i<row.length; i++) {
         row[i].appendChild(square)
     }
 }
+
+let squares = document.querySelectorAll('.square')
+squares.forEach((square) => square.addEventListener('mousemove', function(e) {
+    square.classList.add('hover')
+}))
