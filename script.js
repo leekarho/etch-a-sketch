@@ -1,5 +1,11 @@
 function createRow(num) {
     const container = document.querySelector('#container');
+
+    if (num > 99) {
+        alert("Grid too big")
+        return
+    } 
+
     for (let i=0; i<num; i++) {
         let grid = document.createElement('div');
         grid.classList.add('row');
