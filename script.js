@@ -1,22 +1,34 @@
-const container = document.querySelector('#container');
-
-for (let i=0; i<16; i++) {
-    let grid = document.createElement('div');
-    grid.classList.add('row');
-    container.appendChild(grid)
-}
-
-let row = document.querySelectorAll('.row')
-
-for (let i=0; i<row.length; i++) {
-    for (let j=0; j<16; j++) {
-        let square = document.createElement('div')
-        square.classList.add('square')
-        row[i].appendChild(square)
+function createRow(num) {
+    const container = document.querySelector('#container');
+    for (let i=0; i<num; i++) {
+        let grid = document.createElement('div');
+        grid.classList.add('row');
+        container.appendChild(grid)
+    }
+    
+    let row = document.querySelectorAll('.row')
+    
+    for (let i=0; i<row.length; i++) {
+        for (let j=0; j<num; j++) {
+            let square = document.createElement('div')
+            square.classList.add('square')
+            square.addEventListener('mousedown', function(e) {
+                square.classList.add('hover')
+            })
+            row[i].appendChild(square)
+        }
     }
 }
 
-let squares = document.querySelectorAll('.square')
-squares.forEach((square) => square.addEventListener('mousemove', function(e) {
-    square.classList.add('hover')
-}))
+function reset() {
+    let rows = document.querySelectorAll('.row')
+    rows.forEach((row) => row.remove())
+}
+
+let button = document.querySelector('.button')
+button.addEventListener('click', function() {
+    let gridSize = prompt('Please enter you grid size')
+    reset()
+    createRow(gridSize)
+})
+
