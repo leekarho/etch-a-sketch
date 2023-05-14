@@ -4,7 +4,13 @@ function createRow(num) {
     if (num > 100) {
         alert("Grid too big")
         return
-    } 
+    } else if (num < 2) {
+        alert("Please choose a number between 2 and 100")
+        return
+    } else if (typeof num == "string") {
+        alert("Please choose a number between 2 and 100")
+        return
+    }
 
     for (let i=0; i<num; i++) {
         let grid = document.createElement('div');
