@@ -1,7 +1,7 @@
 function createRow(num) {
     const container = document.querySelector('#container');
 
-    if (num > 99) {
+    if (num > 100) {
         alert("Grid too big")
         return
     } 
@@ -18,7 +18,7 @@ function createRow(num) {
         for (let j=0; j<num; j++) {
             let square = document.createElement('div')
             square.classList.add('square')
-            square.addEventListener('mousedown', function(e) {
+            square.addEventListener('mouseover', function(e) {
                 square.classList.add('hover')
             })
             row[i].appendChild(square)
@@ -41,7 +41,10 @@ function etchASketch(num) {
     })
 
     let resetGrid = document.querySelector('.reset')
-    resetGrid.addEventListener('click', reset)
+    resetGrid.addEventListener('click', function() {
+        reset()
+        createRow(16)
+    })
 }
 
 etchASketch(16)

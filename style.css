@@ -1,17 +1,35 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: bisque;
+}
+
+#container {
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 500px;
+    border-style: solid;
+}
+
 .row {
     display: flex;
+    flex-grow: 1;
 }
 
 .square {
-    border-style: solid;
-    border-color: gray;
-    padding: 7px;
+    display: flex;
+    flex-grow: 1;
 }
 
 .hover {
     background-color: yellowgreen;
 }
 
-.button {
+.button, .reset {
     margin-bottom: 10px;
+    padding: 3px;
 }
