@@ -31,7 +31,8 @@ function reset() {
     rows.forEach((row) => row.remove())
 }
 
-function etchASketch() {
+function etchASketch(num) {
+    createRow(num)
     let button = document.querySelector('.button')
     button.addEventListener('click', function() {
         let gridSize = prompt('Please enter you grid size')
@@ -39,8 +40,8 @@ function etchASketch() {
         createRow(gridSize)
     })
 
-    let resetGrid = document.getElementById("reset")
+    let resetGrid = document.querySelector('.reset')
     resetGrid.addEventListener('click', reset)
 }
 
-etchASketch()
+etchASketch(16)
