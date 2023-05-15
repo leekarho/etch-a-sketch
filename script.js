@@ -1,3 +1,5 @@
+let isDrawing = false;
+
 function createRow(num) {
     const container = document.querySelector('#container');
 
@@ -18,12 +20,17 @@ function createRow(num) {
         for (let j=0; j<num; j++) {
             let square = document.createElement('div')
             square.classList.add('square')
-            square.addEventListener('mouseover', function(e) {
-                square.classList.add('hover')
-            })
             row[i].appendChild(square)
         }
     }
+    colourGrid()  
+}
+
+function colourGrid() {
+    let div = document.querySelectorAll('.square')
+    div.forEach((squ) => squ.addEventListener('mouseover', function(e) {
+        squ.classList.add('hover')
+    }))
 }
 
 function reset() {
