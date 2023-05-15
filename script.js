@@ -28,13 +28,12 @@ function createGrid(num) {
 
 function colourGrid() {
     togglePen()
-    if (isDrawing) {
-        let div = document.querySelectorAll('.square')
-        div.forEach((squ) => squ.addEventListener('mouseover', function() {
+    let div = document.querySelectorAll('.square')
+    div.forEach((squ) => squ.addEventListener('mouseover', function() {
+        if (isDrawing) {
             squ.classList.add('hover')
-        }))
-    }
-
+        }
+    }))  
 }
 
 function reset() {
