@@ -27,7 +27,6 @@ function createGrid(num) {
 }
 
 function colourGrid() {
-    togglePen()
     let div = document.querySelectorAll('.square')
     div.forEach((squ) => squ.addEventListener('mouseover', function() {
         if (isDrawing) {
@@ -50,6 +49,7 @@ function togglePen() {
 }
 
 function etchASketch(num) {
+    togglePen()
     createGrid(num)
     let button = document.querySelector('.button')
     button.addEventListener('click', function() {
