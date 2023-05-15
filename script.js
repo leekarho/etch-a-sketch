@@ -1,6 +1,6 @@
 let isDrawing = false;
 
-function createRow(num) {
+function createGrid(num) {
     const container = document.querySelector('#container');
 
     if (num > 100 || num < 2) {
@@ -27,10 +27,14 @@ function createRow(num) {
 }
 
 function colourGrid() {
-    let div = document.querySelectorAll('.square')
-    div.forEach((squ) => squ.addEventListener('mouseover', function(e) {
-        squ.classList.add('hover')
-    }))
+    togglePen()
+    if (isDrawing) {
+        let div = document.querySelectorAll('.square')
+        div.forEach((squ) => squ.addEventListener('mouseover', function() {
+            squ.classList.add('hover')
+        }))
+    }
+
 }
 
 function reset() {
@@ -38,19 +42,27 @@ function reset() {
     rows.forEach((row) => row.remove())
 }
 
+function togglePen() {
+    let activePen = document.querySelector('#container')
+    activePen.addEventListener('click', function() {
+        isDrawing = !isDrawing
+        console.log(isDrawing)
+    })
+}
+
 function etchASketch(num) {
-    createRow(num)
+    createGrid(num)
     let button = document.querySelector('.button')
     button.addEventListener('click', function() {
         let gridSize = prompt('Please enter you grid size')
         reset()
-        createRow(gridSize)
+        createGrid(gridSize)
     })
 
     let resetGrid = document.querySelector('.reset')
     resetGrid.addEventListener('click', function() {
         reset()
-        createRow(16)
+        createGrid(16)
     })
 }
 
