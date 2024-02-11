@@ -1,35 +1,37 @@
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: bisque;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: bisque;
+  height: 80vh;
 }
 
 #container {
-    background-color: aqua;
-    display: flex;
-    flex-direction: column;
-    width: 500px;
-    height: 500px;
-    border-style: solid;
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 500px;
+  border-style: solid;
 }
 
 .row {
-    display: flex;
-    flex-grow: 1;
+  display: flex;
+  flex-grow: 1;
 }
 
 .square {
-    display: flex;
-    flex-grow: 1;
+  display: flex;
+  flex-grow: 1;
 }
 
 .hover {
-    background-color: yellowgreen;
+  background-color: yellowgreen;
 }
 
-.button, .reset {
-    margin-bottom: 20px;
-    padding: 3px;
+.button,
+.reset {
+  margin-bottom: 20px;
+  padding: 3px;
 }
